@@ -5,14 +5,20 @@ defmodule Identicon do
     |> pick_color
   end
 
+  #pattern match to get access to first 3 properties
+  # [r,g,b | _tail] = hex_list      since we arent using hex_list --> we can directly patter match
   def pick_color(image) do
-    #pattern match to get access to first 3 properties
     %Identicon.Image{hex: [r,g,b | _tail]} = image
-    # [r,g,b | _tail] = hex_list      since we arent using hex_list --> we can directly patter match to above line
-
-    %Identicon.Image{image | {r,g,b}}
-
+    %Identicon.Image{image | color: {r,g,b}}
   end
+
+  # def pick_color(%Identicon.Image{hex: [r,g,b | _tail]} = image) do
+  #   %Identicon.Image{image | color: {r,g,b}}
+  # end
+  # we can directy patter match in teh fucntion input
+
+
+
 
   def hash_input(input) do
     hex = :crypto.hash(:md5, input)
