@@ -17,6 +17,8 @@ defmodule Identicon do
   # end
   # we can directy patter match in teh fucntion input
 
+  
+
 
 
 
