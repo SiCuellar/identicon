@@ -12,8 +12,14 @@ defmodule Identicon do
     Enum.chunk(3)
   end
 
+  def mirror_row(row) do
+    [first, second | _tail] = row
+    row ++ [second, first]
+  end
+  #  ++ Joins list together
+
   #pattern match to get access to first 3 properties
-  # [r,g,b | _tail] = hex_list      since we arent using hex_list --> we can directly patter match
+  # [r,g,b | _tail] = hex_list      since we arent using hex_list --> we cadirectly patter match
   def pick_color(image) do
     %Identicon.Image{hex: [r,g,b | _tail]} = image
     %Identicon.Image{image | color: {r,g,b}}
