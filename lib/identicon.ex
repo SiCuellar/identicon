@@ -7,9 +7,8 @@ defmodule Identicon do
 
   def pick_color(image) do
     #pattern match to get access to first 3 properties
-    %Identicon.Image{hex: hex_list} = image
-    [r,g,b | _tail] = hex_list
-
+    %Identicon.Image{hex: [r,g,b | _tail]} = image
+    # [r,g,b | _tail] = hex_list      since we arent using hex_list --> we can directly patter match to above line
     [r,g,b]
   end
 
