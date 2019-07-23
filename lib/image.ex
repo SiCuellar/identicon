@@ -1,5 +1,5 @@
 defmodule Identicon.Image do
-  defstruct hex: nil, color: nil
+  defstruct hex: nil, color: nil, grid: nil
 
 end
 #we can use struct anywhere in the application using the format below
