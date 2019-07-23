@@ -9,7 +9,9 @@ defmodule Identicon do
     #pattern match to get access to first 3 properties
     %Identicon.Image{hex: [r,g,b | _tail]} = image
     # [r,g,b | _tail] = hex_list      since we arent using hex_list --> we can directly patter match to above line
-    [r,g,b]
+
+    %Identicon.Image{image | {r,g,b}}
+
   end
 
   def hash_input(input) do
