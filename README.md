@@ -30,3 +30,5 @@ mix docs
 This will generate a `doc/`` directory with a documentation in HTML. To view the documentation, open the `index.html` file in the generated directory.
 
 ![silver_identicon](https://github.com/SiCuellar/identicon/silver.png "My Identicon")
+
+!()[https://media.giphy.com/media/zkzKelNfWmeJi/giphy.gif]
