@@ -27,6 +27,9 @@ To generate the documentation, your can run in your terminal:
 ```
 mix docs
 ```
-This will generate a `doc/`` directory with a documentation in HTML. To view the documentation, open the `index.html` file in the generated directory.
+This will generate a `doc/` directory with a documentation in HTML. To view the documentation, open the `index.html` file in the generated directory.
 
-![silver_identicon](https://github.com/SiCuellar/identicon/silver.png "My Identicon")
+## My Identicon
+![silver_identicon](https://github.com/SiCuellar/identicon/blob/master/silver.png)
+
+![](https://media.giphy.com/media/zkzKelNfWmeJi/giphy.gif)
