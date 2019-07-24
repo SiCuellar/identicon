@@ -6,7 +6,26 @@ defmodule Identicon do
     |> build_grid
     |> filter_odd_squares
     |> build_pixle_map
+    |> draw_image
+    |> save_image(input)
   end
+
+  def save_image(image, input) do
+    File.write("#{input}.png", image)
+  end
+
+  def draw_image(%Identicon.Image{color: color, pixle_map: pixle_map}) do
+    image = :egd.create(250,250)
+    fill = :egd.color(color)
+
+
+    Enum.each pixle_map, fn({start,stop}) ->
+      :egd.filledRectangle(image, start, stop, fill)
+    end
+
+    :egd.render(image)
+  end
+# egd docs to get indormation on function
 
   def build_pixle_map(%Identicon.Image{grid: grid} = image) do
     pixle_map = Enum.map grid, fn({_code, index}) ->
