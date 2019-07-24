@@ -31,4 +31,4 @@ This will generate a `doc/`` directory with a documentation in HTML. To view the
 
 ![silver_identicon](https://github.com/SiCuellar/identicon/silver.png "My Identicon")
 
-!()[https://media.giphy.com/media/zkzKelNfWmeJi/giphy.gif]
+![](https://media.giphy.com/media/zkzKelNfWmeJi/giphy.gif)
