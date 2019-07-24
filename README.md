@@ -1,7 +1,9 @@
-# Identicon
+# Identicon :crystal_ball:
 
 Identicon is a small program that creates uniq images based on the string input.
-poplarized by the default github image given to a user when there is no profile picture.
+popularized by the default GitHub image given to a user when there is no profile picture.
+
+Thank you to the __Complete Elixir and Phoenix Bootcamp__ course on Udemy by __Stephen Grider__ :thumbsup::ok_hand:
 
 ## Installation
 
