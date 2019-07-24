@@ -18,14 +18,12 @@ defmodule Identicon do
     image = :egd.create(250,250)
     fill = :egd.color(color)
 
-
     Enum.each pixle_map, fn({start,stop}) ->
       :egd.filledRectangle(image, start, stop, fill)
     end
 
     :egd.render(image)
   end
-# egd docs to get indormation on function
 
   def build_pixle_map(%Identicon.Image{grid: grid} = image) do
     pixle_map = Enum.map grid, fn({_code, index}) ->
@@ -59,25 +57,15 @@ defmodule Identicon do
 
     %Identicon.Image{image | grid: grid}
   end
-  # &mirror_row/1 --> to pass a reference to function
 
   def mirror_row(row) do
     [first, second | _tail] = row
     row ++ [second, first]
   end
-  #  ++ Joins list together
-
-  #pattern match to get access to first 3 properties
-  # [r,g,b | _tail] = hex_list      since we arent using hex_list --> we cadirectly patter match
   def pick_color(image) do
     %Identicon.Image{hex: [r,g,b | _tail]} = image
     %Identicon.Image{image | color: {r,g,b}}
   end
-
-  # def pick_color(%Identicon.Image{hex: [r,g,b | _tail]} = image) do
-  #   %Identicon.Image{image | color: {r,g,b}}
-  # end
-  # we can directy patter match in teh fucntion input
 
   def hash_input(input) do
     hex = :crypto.hash(:md5, input)
@@ -85,5 +73,16 @@ defmodule Identicon do
 
     %Identicon.Image{hex: hex}
   end
-
 end
+
+# &mirror_row/1 --> to pass a reference to function
+
+#  ++ Joins list together
+
+#pattern match to get access to first 3 properties
+# [r,g,b | _tail] = hex_list      since we arent using hex_list --> we cadirectly patter match
+
+# def pick_color(%Identicon.Image{hex: [r,g,b | _tail]} = image) do
+#   %Identicon.Image{image | color: {r,g,b}}
+# end
+# we can directy patter match in teh fucntion input
