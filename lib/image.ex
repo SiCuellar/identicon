@@ -2,6 +2,7 @@ defmodule Identicon.Image do
   @moduledoc """
     Provides struct that carries results from different funtions to create an identicon
   """
+
   defstruct hex: nil, color: nil, grid: nil, pixle_map: nil
 end
 
