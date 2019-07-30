@@ -1,4 +1,11 @@
 defmodule Identicon do
+  @moduledoc """
+    Provides methods for creating and coloring an Identicon
+  """
+  @doc """
+    runs all functions in module and creates and saves and Identicon
+  """
+
   def main(input) do
     input
     |> hash_input
@@ -10,9 +17,17 @@ defmodule Identicon do
     |> save_image(input)
   end
 
+  @doc """
+    Saves and image as a png file to main program folder.
+  """
+
   def save_image(image, input) do
     File.write("#{input}.png", image)
   end
+
+  @doc """
+    Returns an image
+  """
 
   def draw_image(%Identicon.Image{color: color, pixle_map: pixle_map}) do
     image = :egd.create(250,250)
@@ -62,10 +77,19 @@ defmodule Identicon do
     [first, second | _tail] = row
     row ++ [second, first]
   end
+
+  @doc """
+    Returns a color to be used for ideticon using the first three values of hex code
+  """
+
   def pick_color(image) do
     %Identicon.Image{hex: [r,g,b | _tail]} = image
     %Identicon.Image{image | color: {r,g,b}}
   end
+
+  @doc """
+    Returns a list of hex values using the crypto :md5 library based on input
+  """
 
   def hash_input(input) do
     hex = :crypto.hash(:md5, input)
